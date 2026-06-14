@@ -1,3 +1,5 @@
 streamlit
 google-genai
 openai
+python-dotenv
+
