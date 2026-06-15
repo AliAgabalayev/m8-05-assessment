@@ -56,4 +56,6 @@ Two-layer guardrail — full details in [safety/README.md](safety/README.md):
 
 ## Screenshot
 
-> Run `streamlit run app.py` and add a screenshot here before submission.
+![CodeLens chat UI](screenshot.png)
+
+*CodeLens explaining an ASPP (Atrous Spatial Pyramid Pooling) module. Sidebar shows model selector, temperature control, token usage (Input: 22,219 / Output: 1,298), and tips.*
