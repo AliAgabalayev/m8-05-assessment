@@ -9,6 +9,7 @@ from __future__ import annotations
 import json
 import os
 import sys
+import time
 
 from dotenv import load_dotenv
 
@@ -58,7 +59,9 @@ def run_variant(label: str, temperature: float = 0.4) -> dict:
     for case in cases:
         service.reset()
         answer = service.send(case["input"])
+        time.sleep(5)  # stay under 15 RPM free-tier limit
         ok = judge(case, answer)
+        time.sleep(5)
         passed += int(ok)
         status = "PASS" if ok else "FAIL"
         results.append((case["id"], status, answer[:80].replace("\n", " ")))
@@ -85,8 +88,8 @@ def write_results(variants: list[dict]) -> None:
         "",
         "## Rubric",
         "",
-        "The judge (gemini-2.0-flash-lite) receives the user input, the expected behavior description,",
-        "and the actual model answer. It replies PASS if the answer satisfies the expected behavior. Judge model: gemini-3.1-flash-lite.",
+        "The judge (gemini-3.1-flash-lite) receives the user input, the expected behavior description,",
+        "and the actual model answer. It replies PASS if the answer satisfies the expected behavior.",
         "",
         "## Verdict",
         "",

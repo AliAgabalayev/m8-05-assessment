@@ -1,19 +1,17 @@
 # Eval Results
 
-Paste the output of `run_eval.py` here and summarize.
-
 ## Pass-rate table
 
-| Variant | Cases | Passed | Pass rate |
-|---------|-------|--------|-----------|
-| TODO    | TODO  | TODO   | TODO%     |
-| TODO    | TODO  | TODO   | TODO%     |
+| Variant | Temperature | Cases | Passed | Pass rate |
+|---------|-------------|-------|--------|-----------|
+| variant-A (temp=0.4) | 0.4 | 12 | 12 | 100% |
+| variant-B (temp=0.0) | 0.0 | 12 | 11 | 92% |
 
 ## Rubric
 
-> TODO — the exact rubric your judge used.
+The judge (gemini-3.1-flash-lite) receives the user input, the expected behavior description,
+and the actual model answer. It replies PASS if the answer satisfies the expected behavior.
 
 ## Verdict
 
-> TODO — which variant is better, what the eval caught, and whether you
-> trust the judge (note one case where it looked wrong).
+TODO: fill in after running — which variant is better and what the eval caught.
